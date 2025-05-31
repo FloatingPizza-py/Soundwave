@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div style="text-align:center;margin-top:50px;">
+    <h2>Enter Your Username</h2>
+    <input type="text" id="username" placeholder="Username" style="padding:10px;">
+    <button onclick="signUp()" style="padding:10px 20px;">Continue</button>
+  </div>
+
+  <script>
+    function signUp() {
+      const username = document.getElementById('username').value.trim();
+      if (username) {
+        // Save username to localStorage
+        localStorage.setItem('chatUsername', username);
+        // Redirect to the chat page
+        window.location.href = 'ms.html';
+      } else {
+        alert('Please enter a username.');
+      }
+    }
+  </script>
+</body>
+</html>
